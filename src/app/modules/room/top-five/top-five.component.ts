@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopFiveComponent implements OnInit {
 
+  rooms: Array<any> = [
+    { name: 'Calliope', image: 'Calliope.jpg' },
+    { name: 'Thalie', image: 'Thalie.jpg' },
+    { name: 'Pegase', image: 'Pegase.jpg' }
+  ];
+
   constructor() { }
 
   ngOnInit() {
