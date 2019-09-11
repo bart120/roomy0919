@@ -1,1 +1,22 @@
-<p>create-room works!</p>
+<h3>Ajouter une salle</h3>
+
+<form class="form" [formGroup]="formRoom" (ngSubmit)="onSubmit(name)">
+    <mat-form-field>
+        <input matInput type="text" placeholder="Nom" formControlName="name">
+        <mat-error>{{getNameErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Prix" formControlName="price">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Places" formControlName="seatCount">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="Image" formControlName="image">
+            <mat-option *ngFor="let p of pictures" [value]="p.id">{{p.image}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div>
+        <button mat-button type="submit">Enrgistrer</button>
+    </div>
+</form>

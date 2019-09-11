@@ -1,1 +1,10 @@
-<p>detail-room works!</p>
+<mat-card *ngIf="room">
+    <mat-card-header>
+        <mat-card-title>{{room?.name}}</mat-card-title>
+        <mat-card-subtitle>{{room?.price}} €</mat-card-subtitle>
+    </mat-card-header>
+    <img matCardImage src="/assets/images/{{room.image}}">
+    <mat-card-content>
+        {{room.seatCount}} places
+    </mat-card-content>
+</mat-card>

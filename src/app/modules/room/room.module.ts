@@ -5,8 +5,9 @@ import { MaterialModule } from 'src/app/material.module';
 import { CreateRoomComponent } from './create-room/create-room.component';
 import { ListRoomComponent } from './list-room/list-room.component';
 import { DetailRoomComponent } from './detail-room/detail-room.component';
-
-
+import { RoomService } from 'src/app/services/room.service';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,10 +18,15 @@ import { DetailRoomComponent } from './detail-room/detail-room.component';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     TopFiveComponent
-  ]
+  ]/*,
+  providers: [
+    RoomService
+  ]*/
 })
 export class RoomModule { }

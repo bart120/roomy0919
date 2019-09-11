@@ -1,1 +1,26 @@
-<p>list-room works!</p>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prix</th>
+        <th></th>
+    </tr>
+
+    <tr *ngFor="let room of rooms">
+        <td>{{room.id}}</td>
+        <td>{{room.name | uppercase}}</td>
+        <td>{{room.price}}</td>
+        <td>
+            <a [routerLink]="['/rooms/detail/', room.id]" matButton>
+                <mat-icon class="mat-18">search</mat-icon>
+            </a>
+            <button mat-button (click)="onDeleteRoom(room.id)">
+                <mat-icon class="mat-18">delete</mat-icon>
+            </button>
+        </td>
+    </tr>
+</table>
+
+<div>
+    {{rooms|json}}
+</div>

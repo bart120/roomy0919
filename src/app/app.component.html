@@ -16,10 +16,17 @@
     </a>
   </div>
   <div>
-    <a routerLink="/auth/login" mat-button>
+    <a *ngIf="!user; else logout" routerLink="/auth/login" mat-button>
       <mat-icon>locked_out</mat-icon>
       Se connecter
     </a>
+    <ng-template #logout>
+      Bonjour {{user?.name}}
+      <a mat-button (click)="onLogout()">
+        <mat-icon>locked_in</mat-icon>
+        Se déconnecter
+      </a>
+    </ng-template>
   </div>
 
 </mat-toolbar>
